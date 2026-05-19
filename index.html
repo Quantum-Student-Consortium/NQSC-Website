@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National Quantum Student Consortium</title>
+  <meta name="description" content="The National Quantum Student Consortium bridges the gap between today’s QIST students and tomorrow’s QIST leaders." />
+  <style>
+    :root {
+      --navy: #071527;
+      --blue: #164e9f;
+      --light-blue: #e9f1ff;
+      --gold: #c89b3c;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --white: #ffffff;
+      --border: #dbe3ef;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+      font-size: 1.05rem;
+    }
+
+    .brand span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.8rem 1.2rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(7, 21, 39, 0.14);
+    }
+
+    .button.primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .button.secondary {
+      background: var(--white);
+      color: var(--blue);
+      border-color: var(--border);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy), #0d3268 55%, var(--blue));
+      color: var(--white);
+      padding: 6rem 1.25rem 5rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+      right: -140px;
+      top: -100px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      right: 190px;
+      bottom: -80px;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #dfeaff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #d6e3f8;
+      font-size: 1.12rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.25rem;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.85rem;
+      color: #dfeaff;
+    }
+
+    .hero-card li {
+      border-left: 3px solid var(--gold);
+      padding-left: 0.8rem;
+    }
+
+    section {
+      padding: 4.5rem 1.25rem;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      max-width: 840px;
+      margin-bottom: 2.25rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      margin-bottom: 0.85rem;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .lede {
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .text-block {
+      display: grid;
+      gap: 1rem;
+      color: var(--text);
+      font-size: 1.03rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .cards.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 1.5rem;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(7, 21, 39, 0.05);
+    }
+
+    .card .icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--light-blue);
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--light-blue);
+      border-radius: 26px;
+      padding: 2rem;
+      border: 1px solid #ccdcf5;
+    }
+
+    .panel h3 {
+      color: var(--navy);
+      font-size: 1.45rem;
+      margin-bottom: 1rem;
+    }
+
+    .panel p,
+    .panel li {
+      color: var(--muted);
+    }
+
+    .panel ul,
+    .question-list {
+      padding-left: 1.25rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .light {
+      background: #f7f9fc;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 1rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--white);
+    }
+
+    .date {
+      font-weight: 800;
+      color: var(--blue);
+    }
+
+    .timeline-item h3 {
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    .cta {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 30px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta p {
+      color: #d6e3f8;
+      max-width: 700px;
+    }
+
+    footer {
+      padding: 2.5rem 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+
+      .hero-inner,
+      .split,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .cards.two {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 3.5rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="brand">National Quantum <span>Student Consortium</span></a>
+      <div class="nav-links">
+        <a href="#who">Who Are We?</a>
+        <a href="#mission">Mission</a>
+        <a href="#membership">Membership</a>
+        <a href="#application">Application</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">National Quantum Student Consortium</div>
+          <h1>National Quantum Student Consortium</h1>
+          <p>
+            The National Quantum Student Consortium (NQSC) bridges the gap between today’s QIST students and tomorrow’s QIST leaders.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://forms.gle/QFdVZw3HRzzvCdNz9" target="_blank" rel="noopener">Apply to Join</a>
+            <a class="button secondary" href="https://forms.gle/qsKQU72CmTUD88477" target="_blank" rel="noopener">Join Mailing List</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Organization overview">
+          <h2>Built for QIST students and future QIST leaders</h2>
+          <ul>
+            <li>Education</li>
+            <li>Policy advocacy</li>
+            <li>Professional network</li>
+            <li>Leadership and communication development</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="who">
+      <div class="container split">
+        <div class="section-heading">
+          <h2>Who Are We?</h2>
+          <p>We are graduate students at American universities engaged in quantum information science and technology (QIST) research.</p>
+        </div>
+        <div class="panel">
+          <h3>Today’s QIST students and tomorrow’s QIST leaders</h3>
+          <p>
+            We are graduate students at American universities engaged in quantum information science and technology (QIST) research. Our members are visionary students and researchers who recognize that, as the emerging talent in one of the next major technological revolutions, they will be called upon to assume leadership roles requiring fluency in the economic, national security, policy, and commercial landscape surrounding quantum information science. To that end, the National Quantum Student Consortium (NQSC) bridges the gap between today’s QIST students and tomorrow’s QIST leaders.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission" class="light">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Mission</h2>
+        </div>
+        <div class="text-block lede">
+          <p>
+            Through education and policy advocacy, the National Quantum Student Consortium supports American leadership in QIST by connecting quantum-knowledgeable students to the policymakers, national security experts, economic policy leaders, and industry leaders shaping the U.S. quantum ecosystem. The educational aspect of the NQSC helps prepare rising quantum talent in America to advance QIS not only through research and development, but also through engagement with the legal, economic, national security, and commercial dimensions of quantum technology. The policy aspect of the NQSC provides students with a platform to advocate for policies that strengthen America’s quantum workforce, broaden talent pathways, enhance industrial capabilities, and promote the prosperity and security of the Nation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="membership">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Membership</h2>
+        </div>
+        <div class="cards two">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Professional development</h3>
+            <div class="text-block">
+              <p>
+                The NQSC increases the value of your STEM degree by providing a platform to connect with employers in your field, learn directly from leaders across the quantum ecosystem, and expand your professional network. As a member, you will have opportunities to meet industry leaders, government officials, and experienced researchers whose work is shaping the future of quantum information science and technology.
+              </p>
+              <p>
+                The organization also gives members a voice in the policymaking process by helping them connect with lawmakers and advocate for policies that strengthen the stability and growth of the industry they are preparing to enter.
+              </p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Founding membership</h3>
+            <div class="text-block">
+              <p>
+                The NQSC is a comprehensive supplement to the professional development of driven graduate students. It serves as a central hub for networking, employer engagement, leadership and communication development, policy advocacy, and participation in the continued flourishing of American scientific and intellectual life.
+              </p>
+              <p>
+                The National Quantum Student Consortium was launched this year to seize the opportune moment created by the federal government’s continued commitment to American leadership in quantum information science. As part of the NQSC’s first cohort of graduate students, you will have the opportunity to help shape the organization from the ground up and serve as a founding member of a national student community dedicated to the future of American quantum science and technology.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="application" class="light">
+      <div class="container split">
+        <div>
+          <div class="section-heading">
+            <h2>Membership Application</h2>
+          </div>
+          <div class="text-block">
+            <p>
+              NQSC members are forward-looking students in physics, computer science, and quantum-related fields who seek to become effective future leaders in QIST. Through expert-led seminars, members develop fluency in the legal, economic, national security, and commercial dimensions of the U.S. quantum ecosystem while advocating for policies that support American leadership in quantum information science.
+            </p>
+            <p>
+              A successful application is a one-page, double-spaced statement demonstrating enthusiasm for supporting the American quantum ecosystem and curiosity about a nontechnical dimension of the QIST industry. Applicants may choose to frame their statement around a question they hope to explore through the NQSC.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="https://forms.gle/QFdVZw3HRzzvCdNz9" target="_blank" rel="noopener">Start Application</a>
+            <a class="button secondary" href="mailto:membership@quantumstudentconsortium.com">Email Membership</a>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>For example, an applicant may ask:</h3>
+          <ul class="question-list">
+            <li>How is sound policy developed in relation to quantum science and technology?</li>
+            <li>How can the United States build and maintain a quantum supply chain that strengthens American economic competitiveness?</li>
+            <li>What is the impact of quantum computing on national security and cybersecurity?</li>
+            <li>How does the CEO of a quantum computing company lead an emerging-technology company?</li>
+            <li>How does federal funding shape the direction of QIST research and commercialization?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="commitments">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Commitments of the Organization</h2>
+        </div>
+        <div class="cards two">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Quarterly seminars</h3>
+            <p>Students attend quarterly seminars given by quantum industry leaders, national security experts, economic policy experts, etc. on topics</p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Partner organizations</h3>
+            <p>Parter organizations?</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="bylaws" class="light">
+      <div class="container split">
+        <div class="section-heading">
+          <h2>Bylaws</h2>
+          <p>See bylaws, separate document, but will be lined out in website</p>
+        </div>
+        <div class="panel">
+          <h3>Organizational structure</h3>
+          <p>See bylaws, separate document, but will be lined out in website</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Leadership</h2>
+        </div>
+        <div class="cards two">
+          <article class="card">
+            <div class="icon">A</div>
+            <h3>Advisors</h3>
+            <ul>
+              <li>Dr. greg bensten</li>
+              <li>Dr. Ebube ilo-ekeke</li>
+              <li>Dr. Christian Boutan</li>
+              <li>(possibly a Harvard quantum engineering guy)</li>
+              <li>Other suggestions?</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="icon">E</div>
+            <h3>Exec Board</h3>
+            <ul>
+              <li>Nicholas Koval-President, Founder</li>
+              <li>Sam Bevins – Title?</li>
+              <li>Donations/fundraising person?</li>
+              <li>Outreach and member recruitment?</li>
+              <li>Secretary to oraganize meetings?</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="light">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Connect with the National Quantum Student Consortium</h2>
+            <p>
+              Students, researchers, policymakers, industry leaders, and potential partners are invited to connect with the NQSC.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="https://forms.gle/9zS8ixPoEjop52o37" target="_blank" rel="noopener">Contact Us</a>
+            <a class="button secondary" href="mailto:info@quantumstudentconsortium.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© <span id="year"></span> National Quantum Student Consortium. All rights reserved.</p>
+      <p><a href="mailto:info@quantumstudentconsortium.com">info@quantumstudentconsortium.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
