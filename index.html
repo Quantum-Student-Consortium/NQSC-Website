@@ -14,12 +14,15 @@
   <style>
     :root {
       --navy: #071527;
+      --deep-navy: #03101f;
       --blue: #164e9f;
       --light-blue: #e9f1ff;
       --gold: #c89b3c;
+      --gold-light: #f4ead5;
       --text: #172033;
       --muted: #5f6b7a;
       --white: #ffffff;
+      --off-white: #f7f9fc;
       --border: #dbe3ef;
       --max-width: 1120px;
     }
@@ -50,7 +53,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
@@ -93,7 +96,7 @@
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      padding: 0.8rem 1.2rem;
+      padding: 0.82rem 1.25rem;
       font-weight: 700;
       border: 1px solid transparent;
       transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
@@ -106,46 +109,46 @@
     }
 
     .button.primary {
-      background: var(--blue);
+      background: var(--navy);
       color: var(--white);
     }
 
     .button.secondary {
       background: var(--white);
-      color: var(--blue);
+      color: var(--navy);
       border-color: var(--border);
     }
 
     .hero {
-      background: radial-gradient(circle at top right, rgba(44, 131, 255, 0.34), transparent 34%),
-                  radial-gradient(circle at bottom left, rgba(200, 155, 60, 0.18), transparent 28%),
-                  linear-gradient(135deg, #040911, var(--navy) 45%, #0d3268);
-      color: var(--white);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+      color: var(--text);
       padding: 5.75rem 1.25rem 4.75rem;
-      overflow: hidden;
       position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 460px;
-      height: 460px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 50%;
-      right: -150px;
-      top: -130px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      width: 230px;
-      height: 230px;
-      border: 1px solid rgba(255, 255, 255, 0.11);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 7px;
+      background: linear-gradient(90deg, var(--navy), var(--blue), var(--gold));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -240px;
+      top: 100px;
       border-radius: 50%;
-      right: 190px;
-      bottom: -90px;
+      background: radial-gradient(circle, rgba(22, 78, 159, 0.12), transparent 65%);
+      pointer-events: none;
     }
 
     .hero-inner {
@@ -155,19 +158,40 @@
       z-index: 1;
     }
 
+    .institutional-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1.15rem;
+      color: var(--blue);
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .institutional-label::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 999px;
+    }
+
     h1 {
-      max-width: 1050px;
-      font-size: clamp(2.35rem, 5vw, 4.55rem);
-      line-height: 1.02;
-      letter-spacing: -0.06em;
+      max-width: 980px;
+      font-size: clamp(2.55rem, 5vw, 4.95rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      color: var(--navy);
       margin-bottom: 1.25rem;
     }
 
     .hero-lede {
       max-width: 940px;
-      color: #d6e3f8;
-      font-size: 1.15rem;
-      margin-bottom: 2.2rem;
+      color: var(--muted);
+      font-size: 1.16rem;
+      margin-bottom: 2.4rem;
     }
 
     .quote-grid {
@@ -178,19 +202,26 @@
     }
 
     .quote-card {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 24px;
-      padding: 1.15rem;
-      min-height: 230px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: 20px;
+      padding: 1.2rem;
+      min-height: 225px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
+      box-shadow: 0 12px 30px rgba(7, 21, 39, 0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(7, 21, 39, 0.1);
     }
 
     .quote-card blockquote {
-      color: #ffffff;
+      color: var(--text);
       font-size: 0.97rem;
       line-height: 1.45;
       margin-bottom: 1rem;
@@ -206,40 +237,40 @@
     }
 
     .quote-source {
-      color: #d6e3f8;
+      color: var(--navy);
       font-size: 0.85rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .quote-source span {
       display: block;
-      color: #afc4e8;
+      color: var(--muted);
       font-weight: 400;
       margin-top: 0.2rem;
     }
 
     .bridge-panel {
-      background: rgba(255, 255, 255, 0.96);
-      color: var(--text);
-      border-radius: 30px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 28px;
       padding: 2rem;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 2rem;
       align-items: center;
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 28px 70px rgba(7, 21, 39, 0.18);
     }
 
     .bridge-panel h2 {
-      color: var(--navy);
-      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      color: var(--white);
+      font-size: clamp(1.7rem, 3vw, 2.55rem);
       line-height: 1.08;
       letter-spacing: -0.04em;
       margin-bottom: 0.8rem;
     }
 
     .bridge-panel p {
-      color: var(--muted);
+      color: #d6e3f8;
       font-size: 1.05rem;
     }
 
@@ -252,7 +283,7 @@
     .bridge-list li {
       border-left: 3px solid var(--gold);
       padding-left: 0.8rem;
-      color: var(--text);
+      color: #ffffff;
       font-weight: 700;
     }
 
@@ -261,6 +292,17 @@
       flex-wrap: wrap;
       gap: 0.85rem;
       margin-top: 1.25rem;
+    }
+
+    .bridge-panel .button.primary {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .bridge-panel .button.secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.35);
     }
 
     section {
@@ -326,8 +368,8 @@
       display: grid;
       place-items: center;
       border-radius: 14px;
-      background: var(--light-blue);
-      color: var(--blue);
+      background: var(--gold-light);
+      color: var(--navy);
       font-weight: 900;
       margin-bottom: 1rem;
     }
@@ -357,10 +399,11 @@
     }
 
     .panel {
-      background: var(--light-blue);
+      background: var(--off-white);
       border-radius: 26px;
       padding: 2rem;
-      border: 1px solid #ccdcf5;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--gold);
     }
 
     .panel h3 {
@@ -382,7 +425,9 @@
     }
 
     .light {
-      background: #f7f9fc;
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .cta {
@@ -406,6 +451,17 @@
     .cta p {
       color: #d6e3f8;
       max-width: 700px;
+    }
+
+    .cta .button.primary {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .cta .button.secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.35);
     }
 
     footer {
@@ -488,7 +544,9 @@
   <main id="home">
     <section class="hero">
       <div class="hero-inner">
-        <h1>Securing a strategic workforce in quantum science and technology is paramount to American leadership, security, and prosperity.</h1>
+        <div class="institutional-label">National Quantum Student Consortium</div>
+
+        <h1>Where Quantum Talent Meets National Purpose</h1>
 
         <p class="hero-lede">
           Quantum information science is already a priority for American economic competitiveness, national security, cybersecurity, and technological leadership. But the success of the American quantum enterprise depends not only on research breakthroughs; it depends on building a strong workforce of quantum-knowledgeable students, researchers, engineers, and future leaders.
