@@ -117,9 +117,11 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--navy), #0d3268 55%, var(--blue));
+      background: radial-gradient(circle at top right, rgba(44, 131, 255, 0.34), transparent 34%),
+                  radial-gradient(circle at bottom left, rgba(200, 155, 60, 0.18), transparent 28%),
+                  linear-gradient(135deg, #040911, var(--navy) 45%, #0d3268);
       color: var(--white);
-      padding: 5.5rem 1.25rem 4.5rem;
+      padding: 5.75rem 1.25rem 4.75rem;
       overflow: hidden;
       position: relative;
     }
@@ -127,23 +129,23 @@
     .hero::after {
       content: "";
       position: absolute;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      width: 460px;
+      height: 460px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 50%;
-      right: -140px;
-      top: -100px;
+      right: -150px;
+      top: -130px;
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      width: 220px;
-      height: 220px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      width: 230px;
+      height: 230px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
       border-radius: 50%;
       right: 190px;
-      bottom: -80px;
+      bottom: -90px;
     }
 
     .hero-inner {
@@ -154,8 +156,8 @@
     }
 
     h1 {
-      max-width: 1000px;
-      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      max-width: 1050px;
+      font-size: clamp(2.35rem, 5vw, 4.55rem);
       line-height: 1.02;
       letter-spacing: -0.06em;
       margin-bottom: 1.25rem;
@@ -486,7 +488,7 @@
   <main id="home">
     <section class="hero">
       <div class="hero-inner">
-        <h1>American leadership in quantum technology will depend on the people prepared to build it.</h1>
+        <h1>Securing a strategic workforce in quantum science and technology is paramount to American leadership, security, and prosperity.</h1>
 
         <p class="hero-lede">
           Quantum information science is already a priority for American economic competitiveness, national security, cybersecurity, and technological leadership. But the success of the American quantum enterprise depends not only on research breakthroughs; it depends on building a strong workforce of quantum-knowledgeable students, researchers, engineers, and future leaders.
