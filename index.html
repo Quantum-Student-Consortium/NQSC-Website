@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>National Quantum Student Consortium</title>
-  <meta name="description" content="The National Quantum Student Consortium bridges the gap between today’s QIST students and tomorrow’s QIST leaders." />
+
+  <meta
+    name="description"
+    content="The National Quantum Student Consortium bridges the gap between today’s QIST students and tomorrow’s QIST leaders."
+  />
+
   <style>
     :root {
       --navy: #071527;
@@ -169,7 +175,7 @@
     }
 
     .hero-lede {
-      max-width: 860px;
+      max-width: 900px;
       color: #d6e3f8;
       font-size: 1.15rem;
       margin-bottom: 2.2rem;
@@ -187,7 +193,7 @@
       border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 24px;
       padding: 1.15rem;
-      min-height: 220px;
+      min-height: 230px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -196,7 +202,7 @@
 
     .quote-card blockquote {
       color: #ffffff;
-      font-size: 0.98rem;
+      font-size: 0.97rem;
       line-height: 1.45;
       margin-bottom: 1rem;
     }
@@ -223,19 +229,19 @@
       margin-top: 0.2rem;
     }
 
-    .solution-panel {
+    .bridge-panel {
       background: rgba(255, 255, 255, 0.96);
       color: var(--text);
       border-radius: 30px;
       padding: 2rem;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 2rem;
       align-items: center;
       box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
     }
 
-    .solution-panel h2 {
+    .bridge-panel h2 {
       color: var(--navy);
       font-size: clamp(1.7rem, 3vw, 2.6rem);
       line-height: 1.08;
@@ -243,18 +249,18 @@
       margin-bottom: 0.8rem;
     }
 
-    .solution-panel p {
+    .bridge-panel p {
       color: var(--muted);
       font-size: 1.05rem;
     }
 
-    .solution-list {
+    .bridge-list {
       list-style: none;
       display: grid;
       gap: 0.75rem;
     }
 
-    .solution-list li {
+    .bridge-list li {
       border-left: 3px solid var(--gold);
       padding-left: 0.8rem;
       color: var(--text);
@@ -446,7 +452,7 @@
         gap: 0.8rem;
       }
 
-      .solution-panel,
+      .bridge-panel,
       .split,
       .cta {
         grid-template-columns: 1fr;
@@ -473,10 +479,12 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav class="nav" aria-label="Main navigation">
       <a href="#home" class="brand">National Quantum <span>Student Consortium</span></a>
+
       <div class="nav-links">
         <a href="#who">Who Are We?</a>
         <a href="#mission">Mission</a>
@@ -492,70 +500,114 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="problem-label">The problem</div>
+
         <h1>Quantum technology is becoming a national security, economic, and industrial priority.</h1>
+
         <p class="hero-lede">
-          Leaders across government, intelligence, industry, finance, and technology are saying the same thing: quantum information science will shape cybersecurity, defense, economic competitiveness, critical infrastructure, and the next generation of American technological leadership.
+          Leaders across government, national security, industry, and science are making clear that quantum information science will shape cybersecurity, defense, critical infrastructure, economic competitiveness, and the next generation of American technological leadership.
         </p>
 
         <div class="quote-grid" aria-label="Quantum technology quotes">
-          <a class="quote-card" href="https://www.presidency.ucsb.edu/documents/memorandum-promoting-united-states-leadership-quantum-computing-while-mitigating-risks" target="_blank" rel="noopener">
+          <a
+            class="quote-card"
+            href="https://www.presidency.ucsb.edu/documents/memorandum-promoting-united-states-leadership-quantum-computing-while-mitigating-risks"
+            target="_blank"
+            rel="noopener"
+          >
             <blockquote>Quantum computing also poses significant risks to the economic and national security of the United States.</blockquote>
             <div class="quote-source">White House <span>National Security Memorandum</span></div>
           </a>
 
-          <a class="quote-card" href="https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/3020175/president-biden-signs-memo-to-combat-quantum-computing-threat/" target="_blank" rel="noopener">
+          <a
+            class="quote-card"
+            href="https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/3020175/president-biden-signs-memo-to-combat-quantum-computing-threat/"
+            target="_blank"
+            rel="noopener"
+          >
             <blockquote>A cryptanalytically relevant quantum computer could jeopardize civilian and military communications.</blockquote>
             <div class="quote-source">GEN Paul Nakasone <span>NSA / U.S. Cyber Command</span></div>
           </a>
 
-          <a class="quote-card" href="https://www.fbi.gov/news/stories/protecting-quantum-science-and-technology" target="_blank" rel="noopener">
+          <a
+            class="quote-card"
+            href="https://www.fbi.gov/news/stories/protecting-quantum-science-and-technology"
+            target="_blank"
+            rel="noopener"
+          >
             <blockquote>Its implications for our economic and national security are consequential.</blockquote>
             <div class="quote-source">Paul Abbate <span>FBI Deputy Director</span></div>
           </a>
 
-          <a class="quote-card" href="https://www.cantwell.senate.gov/news/press-releases/cantwell-introduces-bipartisan-legislation-to-promote-us-leadership-in-global-race-for-quantum-technology" target="_blank" rel="noopener">
-            <blockquote>Advancements in quantum science and technology are a game-changer.</blockquote>
+          <a
+            class="quote-card"
+            href="https://www.young.senate.gov/newsroom/press-releases/young-cantwell-introduce-national-quantum-initiative-reauthorization-act-2/"
+            target="_blank"
+            rel="noopener"
+          >
+            <blockquote>The National Quantum Initiative strengthens the research and development investments and builds a strong workforce.</blockquote>
+            <div class="quote-source">Sen. Todd Young <span>U.S. Senate</span></div>
+          </a>
+
+          <a
+            class="quote-card"
+            href="https://www.young.senate.gov/newsroom/press-releases/young-cantwell-introduce-national-quantum-initiative-reauthorization-act-2/"
+            target="_blank"
+            rel="noopener"
+          >
+            <blockquote>Quantum technologies promise to dramatically transform every industry and sector of our economy.</blockquote>
+            <div class="quote-source">Sen. Todd Young <span>U.S. Senate</span></div>
+          </a>
+
+          <a
+            class="quote-card"
+            href="https://www.cantwell.senate.gov/news/press-releases/cantwell-introduces-bipartisan-legislation-to-promote-us-leadership-in-global-race-for-quantum-technology"
+            target="_blank"
+            rel="noopener"
+          >
+            <blockquote>The National Quantum Initiative Reauthorization Act strengthens America’s competitive edge through critical R&amp;D investments.</blockquote>
             <div class="quote-source">Sen. Maria Cantwell <span>U.S. Senate</span></div>
           </a>
 
-          <a class="quote-card" href="https://investors.ionq.com/news/news-details/2026/Department-of-War-Technology-Veteran-Katie-Arrington-Joins-IonQ-as-Chief-Information-Officer-CIO/default.aspx" target="_blank" rel="noopener">
-            <blockquote>Quantum computing is one of the most consequential technologies shaping the future of national defense.</blockquote>
-            <div class="quote-source">Niccolo de Masi <span>Chairman &amp; CEO, IonQ</span></div>
+          <a
+            class="quote-card"
+            href="https://www.blackburn.senate.gov/2025/5/technology/blackburn-luj-n-introduce-bill-to-ensure-u-s-remains-the-world-leader-in-quantum"
+            target="_blank"
+            rel="noopener"
+          >
+            <blockquote>The United States cannot afford to fall behind to adversaries like Communist China.</blockquote>
+            <div class="quote-source">Sen. Marsha Blackburn <span>U.S. Senate</span></div>
           </a>
 
-          <a class="quote-card" href="https://blog.google/innovation-and-ai/technology/research/google-willow-quantum-chip/" target="_blank" rel="noopener">
-            <blockquote>Willow paves the way to a useful, large-scale quantum computer.</blockquote>
-            <div class="quote-source">Hartmut Neven <span>Founder, Google Quantum AI</span></div>
-          </a>
-
-          <a class="quote-card" href="https://www.jpmorganchase.com/newsroom/press-releases/2025/jpmc-security-resiliency-initiative" target="_blank" rel="noopener">
-            <blockquote>Our security is predicated on the strength and resiliency of America’s economy.</blockquote>
-            <div class="quote-source">Jamie Dimon <span>Chairman &amp; CEO, JPMorganChase</span></div>
-          </a>
-
-          <a class="quote-card" href="https://www.nist.gov/blogs/taking-measure/quantum-information-science-qa-nists-carl-williams" target="_blank" rel="noopener">
-            <blockquote>All of e-commerce would be at risk of being hacked.</blockquote>
-            <div class="quote-source">Carl Williams <span>NIST Quantum Information Science</span></div>
+          <a
+            class="quote-card"
+            href="https://www.ibm.com/newsroom/2025-04-28-ibm-unveils-150-billion-investment-in-america-to-accelerate-technology-opportunity"
+            target="_blank"
+            rel="noopener"
+          >
+            <blockquote>Quantum computing represents one of the biggest technology opportunities and is projected to transform American competitiveness, jobs, and national security.</blockquote>
+            <div class="quote-source">IBM <span>American technology investment announcement</span></div>
           </a>
         </div>
 
-        <div class="solution-panel">
+        <div class="bridge-panel">
           <div>
-            <h2>The answer: the National Quantum Student Consortium.</h2>
+            <h2>Now is a prudent time to build strong connections between rising quantum talent and the leaders shaping America’s quantum future.</h2>
+
             <p>
-              The NQSC connects quantum students and researchers to the agencies, policymakers, national security experts, economic policy leaders, and industry leaders whose problems these students will help solve.
+              The National Quantum Student Consortium is designed as a two-way street: supplementing a quantum graduate student’s education with knowledge about the economic, national security, policy, and commercial landscape surrounding QIST, while providing the next generation of quantum leaders with a platform to advocate for policies that strengthen America’s quantum workforce, broaden talent pathways, enhance industrial capabilities, and promote the prosperity and security of the Nation.
             </p>
+
             <div class="hero-actions">
               <a class="button primary" href="https://forms.gle/QFdVZw3HRzzvCdNz9" target="_blank" rel="noopener">Apply to Join</a>
               <a class="button secondary" href="https://forms.gle/qsKQU72CmTUD88477" target="_blank" rel="noopener">Join Mailing List</a>
             </div>
           </div>
 
-          <ul class="solution-list">
-            <li>Prepare quantum students for national leadership</li>
-            <li>Bridge QIST research with policy and industry needs</li>
-            <li>Build fluency in security, economic, and commercial dimensions of quantum technology</li>
-            <li>Give students a platform to advocate for America’s quantum future</li>
+          <ul class="bridge-list">
+            <li>Connect quantum students and researchers with policymakers, national security experts, economic policy leaders, and industry leaders</li>
+            <li>Supplement technical graduate training with fluency in the broader QIST landscape</li>
+            <li>Create a platform for student engagement with quantum policy and workforce development</li>
+            <li>Support American leadership in quantum information science and technology</li>
           </ul>
         </div>
       </div>
@@ -566,6 +618,7 @@
         <div class="section-heading">
           <h2>Who Are We?</h2>
         </div>
+
         <div class="panel">
           <p>
             We are graduate students at American universities engaged in quantum information science and technology (QIST) research. Our members are visionary students and researchers who recognize that, as the emerging talent in one of the next major technological revolutions, they will be called upon to assume leadership roles requiring fluency in the economic, national security, policy, and commercial landscape surrounding quantum information science. To that end, the National Quantum Student Consortium (NQSC) bridges the gap between today’s QIST students and tomorrow’s QIST leaders.
@@ -579,6 +632,7 @@
         <div class="section-heading">
           <h2>Mission</h2>
         </div>
+
         <div class="text-block lede">
           <p>
             Through education and policy advocacy, the National Quantum Student Consortium supports American leadership in QIST by connecting quantum-knowledgeable students to the policymakers, national security experts, economic policy leaders, and industry leaders shaping the U.S. quantum ecosystem. The educational aspect of the NQSC helps prepare rising quantum talent in America to advance QIS not only through research and development, but also through engagement with the legal, economic, national security, and commercial dimensions of quantum technology. The policy aspect of the NQSC provides students with a platform to advocate for policies that strengthen America’s quantum workforce, broaden talent pathways, enhance industrial capabilities, and promote the prosperity and security of the Nation.
@@ -592,16 +646,20 @@
         <div class="section-heading">
           <h2>Membership</h2>
         </div>
+
         <div class="text-block lede">
           <p>
             The NQSC increases the value of your STEM degree by providing a platform to connect with employers in your field, learn directly from leaders across the quantum ecosystem, and expand your professional network. As a member, you will have opportunities to meet industry leaders, government officials, and experienced researchers whose work is shaping the future of quantum information science and technology.
           </p>
+
           <p>
             The organization also gives members a voice in the policymaking process by helping them connect with lawmakers and advocate for policies that strengthen the stability and growth of the industry they are preparing to enter.
           </p>
+
           <p>
             The NQSC is a comprehensive supplement to the professional development of driven graduate students. It serves as a central hub for networking, employer engagement, leadership and communication development, policy advocacy, and participation in the continued flourishing of American scientific and intellectual life.
           </p>
+
           <p>
             The National Quantum Student Consortium was launched this year to seize the opportune moment created by the federal government’s continued commitment to American leadership in quantum information science. As part of the NQSC’s first cohort of graduate students, you will have the opportunity to help shape the organization from the ground up and serve as a founding member of a national student community dedicated to the future of American quantum science and technology.
           </p>
@@ -615,21 +673,26 @@
           <div class="section-heading">
             <h2>Membership Application</h2>
           </div>
+
           <div class="text-block">
             <p>
               NQSC members are forward-looking students in physics, computer science, and quantum-related fields who seek to become effective future leaders in QIST. Through expert-led seminars, members develop fluency in the legal, economic, national security, and commercial dimensions of the U.S. quantum ecosystem while advocating for policies that support American leadership in quantum information science.
             </p>
+
             <p>
               A successful application is a one-page, double-spaced statement demonstrating enthusiasm for supporting the American quantum ecosystem and curiosity about a nontechnical dimension of the QIST industry. Applicants may choose to frame their statement around a question they hope to explore through the NQSC.
             </p>
           </div>
+
           <div class="hero-actions">
             <a class="button primary" href="https://forms.gle/QFdVZw3HRzzvCdNz9" target="_blank" rel="noopener">Start Application</a>
             <a class="button secondary" href="mailto:membership@quantumstudentconsortium.com">Email Membership</a>
           </div>
         </div>
+
         <div class="panel">
           <h3>For example, an applicant may ask:</h3>
+
           <ul class="question-list">
             <li>How is sound policy developed in relation to quantum science and technology?</li>
             <li>How can the United States build and maintain a quantum supply chain that strengthens American economic competitiveness?</li>
@@ -646,12 +709,14 @@
         <div class="section-heading">
           <h2>Commitments of the Organization</h2>
         </div>
+
         <div class="cards two">
           <article class="card">
             <div class="icon">01</div>
             <h3>Quarterly seminars</h3>
             <p>Students attend quarterly seminars given by quantum industry leaders, national security experts, economic policy experts, etc. on topics</p>
           </article>
+
           <article class="card">
             <div class="icon">02</div>
             <h3>Partner organizations</h3>
@@ -675,19 +740,23 @@
         <div class="section-heading">
           <h2>Leadership</h2>
         </div>
+
         <div class="cards two">
           <article class="card">
             <div class="icon">A</div>
             <h3>Advisors</h3>
+
             <ul>
               <li>Dr. Gregory Bentsen — Assistant Professor of Physics, William &amp; Mary</li>
               <li>Dr. Ebubechukwu Ilo-Okeke — Assistant Professor of Physics, William &amp; Mary</li>
               <li>Dr. Christian Boutan — Physicist, Pacific Northwest National Laboratory</li>
             </ul>
           </article>
+
           <article class="card">
             <div class="icon">E</div>
             <h3>Exec Board</h3>
+
             <ul>
               <li>Nicholas Koval-President, Founder</li>
               <li>Sam Bevins – Title?</li>
@@ -705,10 +774,12 @@
         <div class="cta">
           <div>
             <h2>Connect with the National Quantum Student Consortium</h2>
+
             <p>
               Students, researchers, policymakers, industry leaders, and potential partners are invited to connect with the NQSC.
             </p>
           </div>
+
           <div class="hero-actions">
             <a class="button primary" href="https://forms.gle/9zS8ixPoEjop52o37" target="_blank" rel="noopener">Contact Us</a>
             <a class="button secondary" href="mailto:info@quantumstudentconsortium.com">Email Us</a>
