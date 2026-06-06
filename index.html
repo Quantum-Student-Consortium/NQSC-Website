@@ -184,26 +184,6 @@
       margin-bottom: 2rem;
     }
 
-    .story-panel {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--gold);
-      border-radius: 18px;
-      padding: 1.6rem;
-      box-shadow: 0 12px 30px rgba(7, 21, 39, 0.06);
-      margin-bottom: 2rem;
-    }
-
-    .story-panel p {
-      color: var(--text);
-      font-size: 1.04rem;
-      margin-bottom: 1rem;
-    }
-
-    .story-panel p:last-child {
-      margin-bottom: 0;
-    }
-
     .mission-panel {
       background: var(--navy);
       color: var(--white);
@@ -324,6 +304,52 @@
       gap: 1rem;
       color: var(--text);
       font-size: 1.03rem;
+    }
+
+    .story-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--gold);
+      border-radius: 18px;
+      padding: 1.7rem;
+      box-shadow: 0 12px 30px rgba(7, 21, 39, 0.06);
+    }
+
+    .story-panel p {
+      color: var(--text);
+      font-size: 1.04rem;
+      margin-bottom: 1rem;
+    }
+
+    .story-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .mini-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: 18px;
+      padding: 1.25rem;
+      box-shadow: 0 10px 30px rgba(7, 21, 39, 0.05);
+    }
+
+    .mini-card h3 {
+      color: var(--navy);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .mini-card p {
+      color: var(--muted);
+      font-size: 1rem;
     }
 
     .cards {
@@ -463,7 +489,8 @@
 
       .mission-panel,
       .split,
-      .cta {
+      .cta,
+      .story-grid {
         grid-template-columns: 1fr;
       }
 
@@ -486,6 +513,7 @@
 
       <div class="nav-links">
         <a href="#mission">Mission</a>
+        <a href="#why-now">Why Now?</a>
         <a href="#membership">Membership</a>
         <a href="#application">Application</a>
         <a href="#leadership">Leadership</a>
@@ -499,21 +527,11 @@
       <div class="hero-inner">
         <div class="hero-kicker">Quantum workforce • Policy • National security • Industry</div>
 
-        <h1>Preparing QIST Students for Leadership Beyond the Laboratory</h1>
+        <h1>Where Quantum Students Meet National Purpose</h1>
 
         <p class="hero-lede">
           As Quantum Information Science and Technology continues to mature, it is becoming increasingly narrow to prepare QIST graduate students only for the technical dimensions of the field. Fundamental research remains the heartbeat of quantum progress, but that research now sits inside a growing ecosystem that includes industry leaders, national security agencies, policymakers, investors, and emerging-technology companies.
         </p>
-
-        <div class="story-panel">
-          <p>
-            The National Quantum Student Consortium connects quantum-knowledgeable students with the people and institutions shaping that ecosystem. Through professional development, high-level engagement, and pro-quantum policy advocacy, the NQSC helps prepare students not only to contribute as researchers, but also to lead organizations, inform policy decisions, understand national-security needs, and strengthen the American quantum enterprise.
-          </p>
-
-          <p>
-            For the United States to sustain leadership in QIST, the talent pipeline must be connected to the broader national purpose surrounding the field. NQSC exists to help make that connection early, while today’s graduate students are becoming tomorrow’s scientific, industrial, and policy leaders.
-          </p>
-        </div>
 
         <div id="mission" class="mission-panel">
           <div>
@@ -541,8 +559,8 @@
             <h3>Program Focus</h3>
 
             <ul class="mission-list">
-              <li>Build professional networks across the quantum ecosystem</li>
-              <li>Engage with policymakers, industry leaders, national security experts, and economic policy leaders</li>
+              <li>Connect quantum graduate students with policymakers, industry leaders, national security experts, and economic policy leaders</li>
+              <li>Prepare students already working in QIST for the policy, business, national-security, and economic dimensions of the quantum revolution</li>
               <li>Strengthen career pathways beyond traditional graduate training</li>
               <li>Advocate for policies that support American quantum leadership, workforce development, and industrial capacity</li>
             </ul>
@@ -551,7 +569,49 @@
       </div>
     </section>
 
-    <section id="membership">
+    <section id="why-now">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Why NQSC? Why Now?</h2>
+        </div>
+
+        <div class="story-panel">
+          <p>
+            QIS is entering a stage in its lifecycle that is familiar from earlier moments in fundamental physics. Less than a century ago, physicists studying nuclear structure, fission, and the new quantum science were working in what seemed to many like a highly specialized research world. Within a few years, those ideas had moved far beyond the laboratory. The word “nuclear” no longer belonged only to physicists; it became inseparable from national security, energy, diplomacy, policy, and public life.
+          </p>
+
+          <p>
+            Quantum information science is experiencing a comparable expansion. Quantum technologies are not simply another academic subfield; they are becoming part of the infrastructure of computation, cybersecurity, sensing, defense, industrial strategy, and economic competitiveness. The students doing QIST research today are the people most likely to drive this field across the next several decades.
+          </p>
+
+          <p>
+            Yet graduate education is still mostly technical. Students learn the science, write the papers, and do the research, but they are often given little structured exposure to the policy, business, national-security, and economic landscape that now surrounds their work. NQSC exists to help close that gap through concise, high-level engagement with the leaders and institutions shaping the American quantum ecosystem.
+          </p>
+
+          <p>
+            The organization also gives quantum students a voice. Students already working in the field have informed views about how the public, policymakers, industry, and universities should support fundamental science in America. NQSC gives them a platform to participate in pro-quantum policy advocacy and help ensure that decisions affecting the field reflect a serious commitment to American quantum leadership.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div class="mini-card">
+            <h3>For students</h3>
+            <p>
+              NQSC helps students understand the ecosystem surrounding their research, build professional credibility, and prepare for roles across research, policy, business, and national security.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h3>For the quantum ecosystem</h3>
+            <p>
+              NQSC helps connect the American QIST talent pipeline with the institutions, employers, and decision-makers who will depend on quantum-knowledgeable leaders.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="membership" class="light">
       <div class="container">
         <div class="section-heading">
           <h2>Membership</h2>
@@ -577,7 +637,7 @@
       </div>
     </section>
 
-    <section id="application" class="light">
+    <section id="application">
       <div class="container split">
         <div>
           <div class="section-heading">
@@ -614,7 +674,7 @@
       </div>
     </section>
 
-    <section id="leadership">
+    <section id="leadership" class="light">
       <div class="container">
         <div class="section-heading">
           <h2>Leadership</h2>
@@ -643,7 +703,7 @@
       </div>
     </section>
 
-    <section id="contact" class="light">
+    <section id="contact">
       <div class="container">
         <div class="cta">
           <div>
