@@ -204,7 +204,7 @@
       margin-bottom: 0;
     }
 
-    .bridge-panel {
+    .mission-panel {
       background: var(--navy);
       color: var(--white);
       border-radius: 24px;
@@ -216,7 +216,7 @@
       box-shadow: 0 28px 70px rgba(7, 21, 39, 0.18);
     }
 
-    .bridge-panel h2 {
+    .mission-panel h2 {
       color: var(--white);
       font-size: clamp(1.55rem, 2.8vw, 2.25rem);
       line-height: 1.12;
@@ -225,12 +225,17 @@
       font-weight: 800;
     }
 
-    .bridge-panel p {
+    .mission-panel p {
       color: #d6e3f8;
       font-size: 1.04rem;
+      margin-bottom: 1rem;
     }
 
-    .priority-card {
+    .mission-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .mission-card {
       background: rgba(255, 255, 255, 0.96);
       color: var(--text);
       border-radius: 18px;
@@ -238,7 +243,7 @@
       border-top: 5px solid var(--gold);
     }
 
-    .priority-card h3 {
+    .mission-card h3 {
       color: var(--navy);
       font-size: 1rem;
       text-transform: uppercase;
@@ -246,20 +251,20 @@
       margin-bottom: 1rem;
     }
 
-    .bridge-list {
+    .mission-list {
       list-style: none;
       display: grid;
       gap: 0.8rem;
     }
 
-    .bridge-list li {
+    .mission-list li {
       color: var(--text);
       font-weight: 700;
       padding-bottom: 0.8rem;
       border-bottom: 1px solid var(--border);
     }
 
-    .bridge-list li:last-child {
+    .mission-list li:last-child {
       border-bottom: none;
       padding-bottom: 0;
     }
@@ -271,12 +276,12 @@
       margin-top: 1.25rem;
     }
 
-    .bridge-panel .button.primary {
+    .mission-panel .button.primary {
       background: var(--white);
       color: var(--navy);
     }
 
-    .bridge-panel .button.secondary {
+    .mission-panel .button.secondary {
       background: transparent;
       color: var(--white);
       border-color: rgba(255, 255, 255, 0.35);
@@ -456,7 +461,7 @@
         gap: 0.8rem;
       }
 
-      .bridge-panel,
+      .mission-panel,
       .split,
       .cta {
         grid-template-columns: 1fr;
@@ -510,12 +515,20 @@
           </p>
         </div>
 
-        <div class="bridge-panel">
+        <div id="mission" class="mission-panel">
           <div>
-            <h2>The National Quantum Student Consortium exists to supplement the education of quantum-knowledgeable graduate students.</h2>
+            <h2>Mission</h2>
 
             <p>
-              NQSC helps students build professional networks, strengthen their career prospects, discover opportunities beyond traditional graduate training, and engage with decision-makers at a high level. At the same time, it supports a stronger American QIST workforce by helping develop researchers who are fluent not only in science, but also in the strategic, commercial, national-security, and policy landscape surrounding quantum information science.
+              Through education and policy advocacy, the National Quantum Student Consortium supports American leadership in QIST by connecting quantum-knowledgeable students to the policymakers, national security experts, economic policy leaders, and industry leaders shaping the U.S. quantum ecosystem.
+            </p>
+
+            <p>
+              The educational aspect of the NQSC helps prepare rising quantum talent in America to advance QIS not only through research and development, but also through engagement with the legal, economic, national security, and commercial dimensions of quantum technology.
+            </p>
+
+            <p>
+              The policy aspect of the NQSC provides students with a platform to advocate for policies that strengthen America’s quantum workforce, broaden talent pathways, enhance industrial capabilities, and promote the prosperity and security of the Nation.
             </p>
 
             <div class="hero-actions">
@@ -524,30 +537,16 @@
             </div>
           </div>
 
-          <div class="priority-card">
+          <div class="mission-card">
             <h3>Program Focus</h3>
 
-            <ul class="bridge-list">
+            <ul class="mission-list">
               <li>Build professional networks across the quantum ecosystem</li>
               <li>Engage with policymakers, industry leaders, national security experts, and economic policy leaders</li>
               <li>Strengthen career pathways beyond traditional graduate training</li>
               <li>Advocate for policies that support American quantum leadership, workforce development, and industrial capacity</li>
             </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="mission" class="light">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Mission</h2>
-        </div>
-
-        <div class="text-block lede">
-          <p>
-            Through education and policy advocacy, the National Quantum Student Consortium supports American leadership in QIST by connecting quantum-knowledgeable students to the policymakers, national security experts, economic policy leaders, and industry leaders shaping the U.S. quantum ecosystem. The educational aspect of the NQSC helps prepare rising quantum talent in America to advance QIS not only through research and development, but also through engagement with the legal, economic, national security, and commercial dimensions of quantum technology. The policy aspect of the NQSC provides students with a platform to advocate for policies that strengthen America’s quantum workforce, broaden talent pathways, enhance industrial capabilities, and promote the prosperity and security of the Nation.
-          </p>
         </div>
       </div>
     </section>
