@@ -8,8 +8,12 @@
 
   <meta
     name="description"
-    content="The National Quantum Student Consortium (NQSC) prepares QIST graduate students for leadership across research, policy, industry, and national security."
+    content="The National Quantum Student Consortium (NQSC) prepares undergraduate and graduate students in QIST and related fields for leadership across research, policy, industry, and national security."
   />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -24,16 +28,17 @@
 
   <style>
     :root {
-      --navy: #071527;
-      --blue: #164e9f;
-      --light-blue: #e9f1ff;
-      --gold: #c89b3c;
-      --gold-light: #f4ead5;
-      --text: #172033;
-      --muted: #5f6b7a;
+      --ink: #17130d;
+      --charcoal: #2d271d;
+      --brown: #51483b;
+      --muted: #6c6255;
+      --cream: #fbf7ef;
+      --paper: #fffdf8;
+      --gold: #8b6726;
+      --gold-light: #ead9b6;
+      --blue: #123d73;
+      --border: #ddd0b8;
       --white: #ffffff;
-      --off-white: #f7f9fc;
-      --border: #dbe3ef;
       --max-width: 1120px;
     }
 
@@ -48,10 +53,11 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background: var(--white);
+      font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+      color: var(--charcoal);
+      line-height: 1.65;
+      background: var(--paper);
+      font-size: 1.08rem;
     }
 
     a {
@@ -59,11 +65,23 @@
       text-decoration: none;
     }
 
+    .text-link {
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1px;
+    }
+
+    .text-link:hover {
+      color: var(--gold);
+    }
+
     header {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 253, 248, 0.94);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
@@ -79,26 +97,31 @@
     }
 
     .brand {
+      font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
       font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -0.03em;
-      font-size: 1.05rem;
+      color: var(--ink);
+      letter-spacing: -0.035em;
+      font-size: 1rem;
     }
 
     .brand span {
-      color: var(--blue);
+      color: var(--gold);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 1.15rem;
-      font-size: 0.93rem;
+      font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 700;
       color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.035em;
     }
 
     .nav-links a:hover {
-      color: var(--blue);
+      color: var(--gold);
     }
 
     .button {
@@ -106,8 +129,10 @@
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      padding: 0.82rem 1.25rem;
-      font-weight: 700;
+      padding: 0.85rem 1.22rem;
+      font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
       border: 1px solid transparent;
       transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
       cursor: pointer;
@@ -115,24 +140,26 @@
 
     .button:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(7, 21, 39, 0.14);
+      box-shadow: 0 12px 28px rgba(23, 19, 13, 0.14);
     }
 
     .button.primary {
-      background: var(--navy);
-      color: var(--white);
+      background: var(--ink);
+      color: var(--paper);
     }
 
     .button.secondary {
-      background: var(--white);
-      color: var(--navy);
+      background: transparent;
+      color: var(--ink);
       border-color: var(--border);
     }
 
     .hero {
-      background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
-      color: var(--text);
-      padding: 5.5rem 1.25rem 4.5rem;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(139, 103, 38, 0.14), transparent 30%),
+        linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+      color: var(--charcoal);
+      padding: 6.25rem 1.25rem 5rem;
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid var(--border);
@@ -144,20 +171,22 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 7px;
-      background: linear-gradient(90deg, var(--navy), var(--blue), var(--gold));
+      height: 8px;
+      background: var(--gold);
     }
 
     .hero::after {
-      content: "";
+      content: "NQSC";
       position: absolute;
-      width: 520px;
-      height: 520px;
-      right: -240px;
-      top: 100px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(22, 78, 159, 0.12), transparent 65%);
+      right: -0.25rem;
+      bottom: -4.5rem;
+      font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+      font-size: clamp(8rem, 22vw, 18rem);
+      font-weight: 800;
+      letter-spacing: -0.08em;
+      color: rgba(139, 103, 38, 0.055);
       pointer-events: none;
+      line-height: 1;
     }
 
     .hero-inner {
@@ -168,85 +197,21 @@
     }
 
     h1 {
-      max-width: 980px;
-      font-size: clamp(2.35rem, 4.6vw, 4.35rem);
-      line-height: 1.04;
-      letter-spacing: -0.045em;
-      color: var(--navy);
-      margin-bottom: 1.25rem;
-      font-weight: 800;
+      max-width: 1020px;
+      font-size: clamp(2.75rem, 6.6vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+      margin-bottom: 1.35rem;
+      font-weight: 700;
     }
 
     .hero-lede {
-      max-width: 930px;
-      color: var(--muted);
-      font-size: 1.16rem;
+      max-width: 880px;
+      color: var(--brown);
+      font-size: clamp(1.22rem, 2.15vw, 1.65rem);
+      line-height: 1.38;
       margin-bottom: 2rem;
-    }
-
-    .mission-panel {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 24px;
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 2rem;
-      align-items: stretch;
-      box-shadow: 0 28px 70px rgba(7, 21, 39, 0.18);
-    }
-
-    .mission-panel h2 {
-      color: var(--white);
-      font-size: clamp(1.55rem, 2.8vw, 2.25rem);
-      line-height: 1.12;
-      letter-spacing: -0.035em;
-      margin-bottom: 0.8rem;
-      font-weight: 800;
-    }
-
-    .mission-panel p {
-      color: #d6e3f8;
-      font-size: 1.04rem;
-      margin-bottom: 1rem;
-    }
-
-    .mission-panel p:last-child {
-      margin-bottom: 0;
-    }
-
-    .mission-card {
-      background: rgba(255, 255, 255, 0.96);
-      color: var(--text);
-      border-radius: 18px;
-      padding: 1.35rem;
-      border-top: 5px solid var(--gold);
-    }
-
-    .mission-card h3 {
-      color: var(--navy);
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      margin-bottom: 1rem;
-    }
-
-    .mission-list {
-      list-style: none;
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .mission-list li {
-      color: var(--text);
-      font-weight: 700;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .mission-list li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
     }
 
     .hero-actions {
@@ -256,19 +221,8 @@
       margin-top: 1.25rem;
     }
 
-    .mission-panel .button.primary {
-      background: var(--white);
-      color: var(--navy);
-    }
-
-    .mission-panel .button.secondary {
-      background: transparent;
-      color: var(--white);
-      border-color: rgba(255, 255, 255, 0.35);
-    }
-
     section {
-      padding: 4.5rem 1.25rem;
+      padding: 4.75rem 1.25rem;
     }
 
     .container {
@@ -278,46 +232,48 @@
 
     .section-heading {
       max-width: 840px;
-      margin-bottom: 2.25rem;
+      margin-bottom: 2rem;
     }
 
     .section-heading h2 {
-      font-size: clamp(1.8rem, 3vw, 2.7rem);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      color: var(--navy);
+      font-size: clamp(2.1rem, 4.1vw, 3.65rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+      font-weight: 700;
       margin-bottom: 0.85rem;
     }
 
     .section-heading p {
       color: var(--muted);
-      font-size: 1.06rem;
+      font-size: 1.12rem;
     }
 
     .lede {
-      font-size: 1.1rem;
-      color: var(--text);
+      font-size: 1.18rem;
+      color: var(--charcoal);
     }
 
     .text-block {
       display: grid;
-      gap: 1rem;
-      color: var(--text);
-      font-size: 1.03rem;
+      gap: 1.05rem;
+      color: var(--charcoal);
+      font-size: 1.12rem;
+      max-width: 920px;
     }
 
     .story-panel {
-      background: var(--white);
+      background: var(--cream);
       border: 1px solid var(--border);
-      border-left: 5px solid var(--gold);
-      border-radius: 18px;
-      padding: 1.7rem;
-      box-shadow: 0 12px 30px rgba(7, 21, 39, 0.06);
+      border-top: 7px solid var(--gold);
+      padding: clamp(1.6rem, 4vw, 2.75rem);
+      box-shadow: 0 18px 48px rgba(23, 19, 13, 0.07);
     }
 
     .story-panel p {
-      color: var(--text);
-      font-size: 1.04rem;
+      color: var(--charcoal);
+      font-size: clamp(1.12rem, 1.65vw, 1.32rem);
+      line-height: 1.6;
       margin-bottom: 1rem;
     }
 
@@ -325,31 +281,73 @@
       margin-bottom: 0;
     }
 
-    .story-grid {
+    .story-panel .question {
+      font-size: clamp(1.9rem, 4vw, 3.15rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      font-weight: 700;
+      margin: 1.6rem 0 1.1rem;
+    }
+
+    .light {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .program-list {
+      list-style: none;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
     }
 
-    .mini-card {
-      background: var(--white);
+    .program-list li {
+      background: var(--paper);
       border: 1px solid var(--border);
-      border-top: 4px solid var(--gold);
-      border-radius: 18px;
-      padding: 1.25rem;
-      box-shadow: 0 10px 30px rgba(7, 21, 39, 0.05);
+      border-left: 5px solid var(--gold);
+      padding: 1.35rem;
+      color: var(--charcoal);
+      font-size: 1.12rem;
+      box-shadow: 0 10px 28px rgba(23, 19, 13, 0.05);
     }
 
-    .mini-card h3 {
-      color: var(--navy);
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2rem;
+      align-items: start;
     }
 
-    .mini-card p {
-      color: var(--muted);
-      font-size: 1rem;
+    .panel {
+      background: var(--paper);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-top: 6px solid var(--gold);
+      box-shadow: 0 14px 36px rgba(23, 19, 13, 0.06);
+    }
+
+    .panel h3 {
+      color: var(--ink);
+      font-size: clamp(1.45rem, 2.5vw, 2.05rem);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .panel p,
+    .panel li {
+      color: var(--brown);
+    }
+
+    .panel ul,
+    .question-list {
+      padding-left: 1.25rem;
+      display: grid;
+      gap: 0.65rem;
+      font-size: 1.08rem;
     }
 
     .cards {
@@ -364,106 +362,91 @@
 
     .card {
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 1.5rem;
-      background: var(--white);
-      box-shadow: 0 10px 30px rgba(7, 21, 39, 0.05);
+      border-top: 5px solid var(--gold);
+      padding: 1.6rem;
+      background: var(--paper);
+      box-shadow: 0 12px 32px rgba(23, 19, 13, 0.055);
     }
 
     .card h3 {
-      color: var(--navy);
-      margin-bottom: 0.5rem;
-      font-size: 1.15rem;
+      color: var(--ink);
+      margin-bottom: 0.65rem;
+      font-size: 1.55rem;
+      line-height: 1.05;
     }
 
     .card p,
     .card li {
-      color: var(--muted);
+      color: var(--brown);
+      font-size: 1.08rem;
     }
 
     .card ul {
       padding-left: 1.1rem;
       display: grid;
-      gap: 0.5rem;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .panel {
-      background: var(--off-white);
-      border-radius: 26px;
-      padding: 2rem;
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--gold);
-    }
-
-    .panel h3 {
-      color: var(--navy);
-      font-size: 1.45rem;
-      margin-bottom: 1rem;
-    }
-
-    .panel p,
-    .panel li {
-      color: var(--muted);
-    }
-
-    .panel ul,
-    .question-list {
-      padding-left: 1.25rem;
-      display: grid;
-      gap: 0.5rem;
-    }
-
-    .light {
-      background: var(--off-white);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      gap: 0.55rem;
     }
 
     .cta {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 30px;
-      padding: 3rem;
+      background: var(--ink);
+      color: var(--paper);
+      padding: clamp(2rem, 5vw, 3.4rem);
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 1.5rem;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -160px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(139, 103, 38, 0.22);
+      pointer-events: none;
+    }
+
+    .cta > * {
+      position: relative;
+      z-index: 1;
     }
 
     .cta h2 {
-      font-size: clamp(1.7rem, 3vw, 2.5rem);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
       margin-bottom: 0.75rem;
+      color: var(--paper);
     }
 
     .cta p {
-      color: #d6e3f8;
-      max-width: 700px;
+      color: #e9ddc6;
+      max-width: 720px;
+      font-size: 1.15rem;
     }
 
     .cta .button.primary {
-      background: var(--white);
-      color: var(--navy);
+      background: var(--paper);
+      color: var(--ink);
     }
 
     .cta .button.secondary {
       background: transparent;
-      color: var(--white);
-      border-color: rgba(255, 255, 255, 0.35);
+      color: var(--paper);
+      border-color: rgba(255, 253, 248, 0.35);
     }
 
     footer {
       padding: 2.5rem 1.25rem;
       border-top: 1px solid var(--border);
       color: var(--muted);
+      background: var(--paper);
+      font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
     }
 
     .footer-inner {
@@ -473,7 +456,7 @@
       justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 900px) {
@@ -487,13 +470,12 @@
         gap: 0.8rem;
       }
 
-      .mission-panel,
       .split,
-      .cta,
-      .story-grid {
+      .cta {
         grid-template-columns: 1fr;
       }
 
+      .program-list,
       .cards,
       .cards.two {
         grid-template-columns: 1fr;
@@ -501,6 +483,27 @@
 
       section {
         padding: 3.5rem 1.25rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 1.02rem;
+      }
+
+      .hero {
+        padding: 4.25rem 1.25rem 3.5rem;
+      }
+
+      .nav-links {
+        font-size: 0.78rem;
+      }
+
+      .story-panel,
+      .panel,
+      .card,
+      .cta {
+        padding: 1.35rem;
       }
     }
   </style>
@@ -512,9 +515,8 @@
       <a href="#home" class="brand">National Quantum <span>Student Consortium</span></a>
 
       <div class="nav-links">
-        <a href="#mission">Mission</a>
-        <a href="#why-now">Why Now?</a>
-        <a href="#membership">Membership</a>
+        <a href="#about">About Us</a>
+        <a href="#program-focus">Program Focus</a>
         <a href="#application">Application</a>
         <a href="#leadership">Leadership</a>
         <a href="#contact">Contact</a>
@@ -528,118 +530,89 @@
         <h1>Where Quantum Students Meet National Purpose</h1>
 
         <p class="hero-lede">
-          As Quantum Information Science and Technology (QIST) continues to mature, it is becoming increasingly narrow to prepare QIST graduate students only for the technical dimensions of the field. Fundamental research remains the heartbeat of quantum progress, but that research now sits inside a growing ecosystem that includes industry leaders, national security agencies, policymakers, investors, and emerging-technology companies.
+          Quantum is poised to shape the next technological era. For students, that means uncommon opportunity, broader responsibility, and preparation beyond the lab.
         </p>
 
-        <div id="mission" class="mission-panel">
-          <div>
-            <h2>Mission</h2>
-
-            <p>
-              Through education and policy advocacy, the National Quantum Student Consortium supports American leadership in QIST by connecting quantum-knowledgeable students to the policymakers, national security experts, economic policy leaders, and industry leaders shaping the U.S. quantum ecosystem.
-            </p>
-
-            <p>
-              The educational aspect of the NQSC helps prepare rising quantum talent in America to advance Quantum Information Science (QIS) not only through research and development, but also through engagement with the legal, economic, national security, and commercial dimensions of quantum technology.
-            </p>
-
-            <p>
-              The policy aspect of the NQSC provides students with a platform to advocate for policies that strengthen America’s quantum workforce, broaden talent pathways, enhance industrial capabilities, and promote the prosperity and security of the Nation.
-            </p>
-
-            <div class="hero-actions">
-              <a class="button primary" href="https://forms.gle/QFdVZw3HRzzvCdNz9" target="_blank" rel="noopener">Apply to Join</a>
-              <a class="button secondary" href="https://forms.gle/qsKQU72CmTUD88477" target="_blank" rel="noopener">Join Mailing List</a>
-            </div>
-          </div>
-
-          <div class="mission-card">
-            <h3>Program Focus</h3>
-
-            <ul class="mission-list">
-              <li>Connect quantum graduate students with policymakers, industry leaders, national security experts, and economic policy leaders</li>
-              <li>Prepare students already working in QIST for the policy, business, national-security, and economic dimensions of the quantum revolution</li>
-              <li>Strengthen career pathways beyond traditional graduate training</li>
-              <li>Advocate for policies that support American quantum leadership, workforce development, and industrial capacity</li>
-            </ul>
-          </div>
+        <div class="hero-actions">
+          <a class="button primary" href="https://forms.gle/QFdVZw3HRzzvCdNz9" target="_blank" rel="noopener">Apply to Join</a>
         </div>
       </div>
     </section>
 
-    <section id="why-now">
+    <section id="quantum-era">
       <div class="container">
-        <div class="section-heading">
-          <h2>Why NQSC? Why Now?</h2>
-        </div>
-
         <div class="story-panel">
           <p>
-            Fundamental physics often follows a recognizable lifecycle. Sometimes research emerges with the potential to radically alter human life. When that happens, the physicists, their research, and even their vocabulary become part of a story much larger than the ordinary progression of scientific discovery.
+            Quantum is out of the lab. Quantum computing companies are now traded on public markets, and <a class="text-link" href="https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/mckinsey-quantum-technology-monitor-2026-a-commercial-tipping-point" target="_blank" rel="noopener">McKinsey reports</a> that more than 300 global companies are adopting quantum computing, with the technology projected to create up to $2.7 trillion in economic value worldwide by 2035.
           </p>
 
           <p>
-            The most famous example is the nuclear revolution. As nuclear science shaped the twentieth century, terms like <em>nuclear</em> and <em>fission</em>, once largely confined to physics departments and specialized research communities, became part of the household vernacular. Today, it would be overly narrow to treat the word <em>nuclear</em> as belonging strictly to an academic discipline. The term now carries weight in national security, energy, diplomacy, policy, industry, and public life.
+            In April 2026, the Senate Commerce Committee unanimously passed the <a class="text-link" href="https://www.commerce.senate.gov/press/dem/release/led-by-cantwell-and-young-national-quantum-initiative-reauthorization-act-unanimously-passes-commerce-committee-on-world-quantum-day/" target="_blank" rel="noopener">National Quantum Initiative Reauthorization Act</a>, renewing and expanding the federal government’s commitment to American leadership in quantum information science and technology. Then, in June, the White House put an exclamation point on that commitment with an <a class="text-link" href="https://www.whitehouse.gov/presidential-actions/2026/06/ushering-in-the-next-frontier-of-quantum-innovation/" target="_blank" rel="noopener">executive order</a> directing federal agencies to align around America’s quantum strategy.
           </p>
 
           <p>
-            As the promise and consequences of nuclear research became central to public life, the physicists and engineers closest to that science were asked to take on responsibilities far beyond the traditional work of research. They advised governments, shaped public policy, helped build national laboratories, contributed to energy strategy, supported defense planning, and entered leadership roles in institutions that had suddenly become central to national life.
+            Agencies are now updating quantum strategy, planning for private-sector partnerships, strengthening supply-chain policy, developing quantum workforce efforts, and preparing for the broader arrival of quantum technologies across science, industry, and national security.
           </p>
 
           <p>
-            Quantum Information Science (QIS) is approaching a similar kind of expansion. Quantum technologies are becoming relevant to computation, cybersecurity, sensing, defense, industrial strategy, and economic competitiveness. The students doing QIST research now will not only write papers and solve technical problems; many will be asked to help guide organizations, advise decision-makers, shape policy, build companies, and support the institutions responsible for American quantum leadership.
+            For students studying physics and other quantum-related fields, we are watching from our labs as the machinery of American industry, finance, governance, and national security turns its attention toward our field.
+          </p>
+
+          <p class="question">Are we prepared?</p>
+
+          <p>
+            Prepared to become part of a scarce class of subject-matter experts in a field that is not waiting for the workforce pipeline to widen. As quantum-knowledgeable students entering the workforce near the cusp of the quantum revolution, we may be asked over the course of our careers to take on roles that would ordinarily not be available to us. Before we retire, quantum-knowledgeable students may be asked to advise on policy, answer national security questions, lead quantum divisions inside companies, help build emerging-technology organizations, and educate a new generation of quantum engineers and scientists.
           </p>
 
           <p>
-            NQSC exists to help prepare QIST students for that broader responsibility. By supplementing technical graduate education with exposure to policy, business, national security, and economic strategy, the organization helps students understand the landscape their research is entering and the roles they may be called to fill over the next several decades.
+            The National Quantum Student Consortium exists to prepare students knowledgeable in QIST for the widening future of a field expanding far beyond academic research. We connect member students with professionals across the broader quantum ecosystem, including policymakers, national and economic security experts, investors, industry leaders, and innovators.
           </p>
-        </div>
-
-        <div class="story-grid">
-          <div class="mini-card">
-            <h3>For students</h3>
-            <p>
-              NQSC helps students understand the ecosystem surrounding their research, expand employment opportunities, and prepare for roles across research, policy, business, and national security.
-            </p>
-          </div>
-
-          <div class="mini-card">
-            <h3>For the quantum ecosystem</h3>
-            <p>
-              NQSC helps connect the American QIST talent pipeline with the institutions, employers, and decision-makers who will depend on quantum-knowledgeable leaders.
-            </p>
-          </div>
         </div>
       </div>
     </section>
 
-    <section id="membership" class="light">
+    <section id="about" class="light">
       <div class="container">
         <div class="section-heading">
-          <h2>Membership</h2>
+          <h2>About Us</h2>
         </div>
 
         <div class="text-block lede">
           <p>
-            The NQSC increases the value of your STEM degree by providing a platform to connect with employers in your field, learn directly from leaders across the quantum ecosystem, and expand your professional network. As a member, you will have opportunities to meet industry leaders, government officials, and experienced researchers whose work is shaping the future of quantum information science and technology.
+            The National Quantum Student Consortium helps students understand the ecosystem surrounding their research, expand professional opportunities, and prepare for roles across research, policy, business, and national security.
           </p>
 
           <p>
-            The organization also gives members a voice in the policymaking process by helping them connect with lawmakers and advocate for policies that strengthen the stability and growth of the industry they are preparing to enter.
+            NQSC increases the value of a STEM education by giving students a platform to connect with employers, learn directly from leaders across the quantum ecosystem, and build a professional network beyond their home institution. Members will have opportunities to meet industry leaders, government officials, investors, policymakers, national security professionals, and experienced researchers whose work is shaping the future of quantum information science and technology.
           </p>
 
           <p>
-            The NQSC is a comprehensive supplement to the professional development of driven graduate students. It serves as a central hub for networking, employer engagement, leadership and communication development, policy advocacy, and participation in the continued flourishing of American scientific and intellectual life.
+            The organization also gives members a voice in the policymaking process by helping them connect with lawmakers and advocate for policies that strengthen the stability, growth, and strategic capacity of the industry they are preparing to enter.
           </p>
 
           <p>
-            The National Quantum Student Consortium was launched this year to seize the opportune moment created by the federal government’s continued commitment to American leadership in quantum information science. As part of the NQSC’s first cohort of graduate students, you will have the opportunity to help shape the organization from the ground up and serve as a founding member of a national student community dedicated to the future of American quantum science and technology.
+            NQSC is a professional-development supplement for driven undergraduate and graduate students. It serves as a central hub for networking, employer engagement, leadership and communication development, policy education, and participation in the continued flourishing of American scientific and intellectual life.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="application">
+    <section id="program-focus">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Program Focus</h2>
+        </div>
+
+        <ul class="program-list">
+          <li>Connect undergraduate and graduate students in QIST and related fields with policymakers, industry leaders, national security experts, investors, and economic policy leaders.</li>
+          <li>Prepare students already working in QIST for the policy, business, national-security, and economic dimensions of the quantum revolution.</li>
+          <li>Strengthen career pathways beyond traditional technical training.</li>
+          <li>Advocate for policies that support American quantum leadership, workforce development, industrial capacity, and trusted supply chains.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="application" class="light">
       <div class="container split">
         <div>
           <div class="section-heading">
@@ -648,11 +621,11 @@
 
           <div class="text-block">
             <p>
-              The NQSC is application-based in order to create a close, engaged environment for our members and the professionals who meet with them. We want students to be able to ask serious questions, have their voices heard, build relationships, and take part in meaningful conversations with leaders across the quantum ecosystem.
+              NQSC is application-based in order to create a close, engaged environment for our members and the professionals who meet with them. Membership is open to undergraduate and graduate students studying QIST or quantum-related fields, including physics, engineering, computer science, mathematics, chemistry, materials science, and related disciplines.
             </p>
 
             <p>
-              To apply, please submit a brief informal statement introducing yourself, your work or interests in QIST, and what draws you to the NQSC. Applicants may describe a quantum-related policy issue they care about, a professional question they hope to explore, or a nontechnical dimension of the quantum ecosystem they would like to better understand. Possible topics include quantum policy, national security, cybersecurity, supply chains, commercialization, workforce development, federal funding, or the role of emerging quantum companies.
+              To apply, please submit a brief informal statement introducing yourself, your work or interests in QIST, and what draws you to NQSC. Applicants may describe a quantum-related policy issue they care about, a professional question they hope to explore, or a nontechnical dimension of the quantum ecosystem they would like to better understand. Possible topics include quantum policy, national security, cybersecurity, supply chains, commercialization, workforce development, federal funding, or the role of emerging quantum companies.
             </p>
 
             <p>
@@ -667,7 +640,7 @@
         </div>
 
         <div class="panel">
-          <h3>For example, an applicant may ask:</h3>
+          <h3>Questions our students may bring directly to professionals across the quantum ecosystem:</h3>
 
           <ul class="question-list">
             <li>How is sound policy developed in relation to quantum science and technology?</li>
@@ -680,7 +653,7 @@
       </div>
     </section>
 
-    <section id="leadership" class="light">
+    <section id="leadership">
       <div class="container">
         <div class="section-heading">
           <h2>Leadership</h2>
@@ -709,14 +682,14 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="light">
       <div class="container">
         <div class="cta">
           <div>
             <h2>Connect with the National Quantum Student Consortium</h2>
 
             <p>
-              Students, researchers, policymakers, industry leaders, and potential partners are invited to connect with the NQSC.
+              Students, researchers, policymakers, industry leaders, and potential partners are invited to connect with NQSC.
             </p>
           </div>
 
